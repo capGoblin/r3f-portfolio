@@ -1,5 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
+// import { Excalidraw } from "node_modules\excalidraw-collab\src\packages\excalidraw"; // Import the Excalidraw component
+// import { Excalidraw } from "../node_modules/excalidraw-collab/src/packages/excalidraw"; // Import the Excalidraw component
+// import { Excalidraw } from "../node_modules/@excalidraw/excalidraw"; // Import the Excalidraw component
 import "./App.css";
 // import { useState } from "react";
 // import reactLogo from "./assets/react.svg";
@@ -31,10 +34,11 @@ function App() {
     //   </p>
     // </>
     <>
-      <Canvas shadows>
+      <Canvas shadows camera={{ position: [0, 2, 5] }}>
         <color attach="background" args={["#ececec"]} />
         <Experience />
       </Canvas>
+      
     </>
   );
 }
