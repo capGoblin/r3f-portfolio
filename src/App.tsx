@@ -1,6 +1,6 @@
 import { OrbitControls, Circle } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
-import * as THREE from "three"; // Import the entire Three.js module
+import * as THREE from "three";
 
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 

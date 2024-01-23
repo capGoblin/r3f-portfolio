@@ -1,0 +1,32 @@
+Challenges during the integration of Excalidraw Collab into a TypeScript/React project have resulted in these problems
+
+
+Problem Description:
+
+On attempting to utilize the Excalidraw component by importing it in the TypeScript/React application have encountered the following TypeScript error:
+Excalidraw cannot be used as a JSX component.
+Its type 'MemoExoticComponent<ForwardRefExoticComponent<PublicExcalidrawProps & RefAttributes<ExcalidrawAPIRefValue>>>' is not a valid JSX element type.
+Type 'MemoExoticComponent<ForwardRefExoticComponent<PublicExcalidrawProps & RefAttributes<ExcalidrawAPIRefValue>>>' is not assignable to type '(props: any, deprecatedLegacyContext?: any) => ReactNode'.
+Type 'ReactElement<any, string | JSXElementConstructor<any>> | null' is not assignable to type 'ReactNode'.
+Type 'ReactElement<any, string | JSXElementConstructor<any>>' is not assignable to type 'ReactNode'.
+Property 'children' is missing in type 'ReactElement<any, string | JSXElementConstructor<any>>' but required in type 'ReactPortal'.ts(2786)
+index.d.ts(176, 9): 'children' is declared here.
+Excalidraw is not defined.
+
+
+Previous Issue:
+Before encountering this issue, I dealt with the following error:
+Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+But the Excalidraw is indeed exported from index.tsx. This exact issue is also faced by "Joshua-onwuzu" here
+
+
+Changes made in the codebase:
+- Updated the .env.
+- Updated the webpack entry to ../../excalidraw-app/index.tsx.
+- yarn install, did some yarn add to resolve some throttle not found errors and SVG errors.
+- And yarn run pack
+- Executed npm link in the packages/excalidraw path.
+- Used npm link @excalidraw/excalidraw in another React/TypeScript project.
+
+
+I have also experimented with different versions of Excalidraw, attempting to use it in both JSX and TSX React projects. Unfortunately, still dealing with these errors.
